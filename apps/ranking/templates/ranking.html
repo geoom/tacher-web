@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Ranking!</h1>
+    {%  for record in ranking  %}
+    	<p>{{ record.teacher.name }} ( {{ record.exigencia}}) </p>
+    {%  endfor %}
+{% endblock content %}

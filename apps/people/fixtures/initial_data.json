@@ -1,0 +1,32 @@
+[
+ {
+ 	"model": "people.teacher",
+ 	"pk": 1,
+ 	"fields": {
+	   "name": "yañez",
+	   "description": "mal profesor(a)",
+	   "average_record": 7.0,
+ 	   "record": 1	
+ 	}
+ },
+ {
+ 	"model": "people.teacher",
+ 	"pk": 2,
+ 	"fields": {
+ 	   "name": "zoraida",
+	   "description": "mal profesor(a)",
+	   "average_record": 2.3,
+ 	   "record": 2
+ 	}   
+ },
+ {
+ 	"model": "people.teacher",
+ 	"pk": 3,
+ 	"fields": {
+ 	   "name": "luzmila",
+	   "description": "mal profesor(a)",
+	   "average_record": 3.4,
+   	   "record": 3
+ 	}
+ }
+]
