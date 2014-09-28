@@ -1,9 +1,15 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Tacher</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}"/>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    {% block extrastyles %} {% endblock extrastyles %}
 </head>
 <body>
     {% block content %} {% endblock content %}
 </body>
+
 </html>
