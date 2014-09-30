@@ -3,30 +3,27 @@
  	"model": "people.teacher",
  	"pk": 1,
  	"fields": {
-	   "name": "yañez",
+	   "name": "yyyyyy",
 	   "description": "mal profesor(a)",
-	   "average_record": 7.0,
- 	   "record": 1	
+	   "average_record": 7.0
  	}
  },
  {
  	"model": "people.teacher",
  	"pk": 2,
  	"fields": {
- 	   "name": "zoraida",
+ 	   "name": "zzzzzzzz",
 	   "description": "mal profesor(a)",
-	   "average_record": 2.3,
- 	   "record": 2
- 	}   
+	   "average_record": 2.3
+ 	}
  },
  {
  	"model": "people.teacher",
  	"pk": 3,
  	"fields": {
- 	   "name": "luzmila",
+ 	   "name": "lllllllll",
 	   "description": "mal profesor(a)",
-	   "average_record": 3.4,
-   	   "record": 3
+	   "average_record": 3.4
  	}
  }
 ]

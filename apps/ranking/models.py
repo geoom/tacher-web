@@ -1,12 +1,8 @@
 from django.db import models
 from django.contrib import admin
 
+
 class Record(models.Model):
-	puntualidad = models.SmallIntegerField()
-	exigencia = models.SmallIntegerField()
-	pasabilidad = models.SmallIntegerField()
+    pass
 
-	#def __unicode__(self):
-	#	return self.name
-
-admin.site.register(Record)
+    # admin.site.register(Record)
