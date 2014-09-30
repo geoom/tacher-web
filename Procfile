@@ -1,1 +1,1 @@
-web: gunicorn tacher_web.wsgi --log-file -
+web: gunicorn tacher.wsgi --log-file -
