@@ -5,11 +5,13 @@ urlpatterns = patterns('',
 
     url(r'^$', 'tacher.views.home', name='home'),
     url(r'^about$', 'tacher.views.about', name='about'),
-    url(r'^dashboard', 'tacher.views.dashboard', name='dashboard'),
 
-    url(r'^', include('apps.people.urls')),
+    url(r'^', include('apps.people.urls', namespace='people')),
+    url(r'^', include('apps.ranking.urls', namespace='ranking')),
+    url(r'^', include('apps.auth.urls', namespace='auth')),
 
-    # Uncomment the next line to enable the admin:
-    url(r'^', include('apps.ranking.urls')),
+    # Url for authentication
+    url('', include('social.apps.django_app.urls', namespace='social')),
+
     url(r'^admin/', include(admin.site.urls)),
 )

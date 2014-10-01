@@ -9,6 +9,9 @@
 </div>
 <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Profile</a></li>
+        {% if user and not user.is_anonymous %}
+            <li><a href="">{{ user.get_full_name|default:user.username }}</a></li>
+            <li><a href="{% url 'auth:signout' %}?next={{ request.path }}">Logout</a></li>
+        {% endif %}
     </ul>
 </div>

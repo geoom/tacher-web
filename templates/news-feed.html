@@ -1,7 +1,7 @@
 {% extends 'dashboard.html' %}
 {% block body %}
     <h1 class="page-header">News feed</h1>
-    <p>You can find here your scored teachers and more, thanks for being here.</p>
+    <p>Hello {{ user.get_full_name|default:user.username }}, you can find here your scored teachers and more, thanks for being here.</p>
     <h2 class="sub-header">List of your loved teachers</h2>
 
     <div class="table-responsive">
@@ -14,8 +14,8 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>1,001</td>
-                    <td>Lorem</td>
+                    <td>1</td>
+                    <td>Profe arbolito</td>
                 </tr>
             </tbody>
         </table>

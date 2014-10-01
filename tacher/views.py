@@ -1,21 +1,22 @@
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 def home(request):
-    template_name = "home.html"
-    return render(request, template_name, {'msg': 'ola, esto es Tacher ... la venganza !!'})
+    if not request.user.is_anonymous():
+        template_name = "news-feed.html"
+        context = {
+            'user': request.user,
+        }
+    else:
+        template_name = "home.html"
+        context = {
+            'msg': 'ola, esto es Tacher ... la venganza !!'
+        }
+
+    return render(request, template_name, context)
 
 
 def about(request):
     return HttpResponse('This is a project to kill troll teachers ... muajajaja')
-
-def dashboard(request):
-    template_name = "newsfeed.html"
-    return render(request, template_name, {})
-
-
-def ranking(request):
-    template_name = "ranking.html"
-    return render(request, template_name, {})
