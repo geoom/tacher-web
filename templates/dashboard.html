@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block extrastyles %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}"/>
+{% endblock extrastyles %}
+{% block content %}
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            {% include 'shared/_header.html' %}
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                {% include 'shared/_sidebar.html' %}
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                {% block body %}{% endblock body %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

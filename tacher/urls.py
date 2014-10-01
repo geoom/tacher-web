@@ -5,6 +5,7 @@ urlpatterns = patterns('',
 
     url(r'^$', 'tacher.views.home', name='home'),
     url(r'^about$', 'tacher.views.about', name='about'),
+    url(r'^dashboard', 'tacher.views.dashboard', name='dashboard'),
 
     url(r'^', include('apps.people.urls')),
 
