@@ -40,19 +40,30 @@ ADMINS = (
     ('G', 'hi.geoom@gmail.com'),
 )
 
-# Application definition
+################################### APPS CONFIG
 
-INSTALLED_APPS = (
+DJANGO_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+)
+
+THIRD_APPS = (
     'social.apps.django_app.default',
+)
+
+LOCAL_APPS = (
     'apps.people',
     'apps.ranking',
+    'apps.authen',
 )
+
+INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_APPS
+
+################################### /APPS CONFIG
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
