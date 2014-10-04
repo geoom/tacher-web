@@ -53,6 +53,7 @@ DJANGO_APPS = (
 
 THIRD_APPS = (
     'social.apps.django_app.default',
+    'rest_framework',
 )
 
 LOCAL_APPS = (
