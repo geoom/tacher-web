@@ -54,6 +54,7 @@ DJANGO_APPS = (
 THIRD_APPS = (
     'social.apps.django_app.default',
     'rest_framework',
+    'rest_framework_swagger',
 )
 
 LOCAL_APPS = (
@@ -132,3 +133,14 @@ LOGIN_REDIRECT_URL = '/'
 # Setting client id for social app
 SOCIAL_AUTH_FACEBOOK_KEY = env_var('SOCIAL_AUTH_FACEBOOK_KEY')
 SOCIAL_AUTH_FACEBOOK_SECRET = env_var('SOCIAL_AUTH_FACEBOOK_SECRET')
+
+
+SWAGGER_SETTINGS = {
+    "exclude_namespaces": [],    #  List URL namespaces to ignore
+    "api_version": '1.0',  # Specify your API's version (optional)
+    "api_path": "/api/",
+    "enabled_methods": [
+        'get', 'post', 'put', 'patch', 'delete'
+    ],
+    "is_authenticated": False
+}
