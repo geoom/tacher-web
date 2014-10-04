@@ -1,0 +1,10 @@
+{% extends 'dashboard2.html' %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-12">
+        <a href="{% url 'people:teacher_list' %}">Back to teacher list</a>
+        <h1>{{ object.name }}</h1>
+    </div>
+</div>
+{% endblock body %}

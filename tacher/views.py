@@ -2,12 +2,15 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
+from apps.people.models import Teacher
+
 
 def home(request):
     if not request.user.is_anonymous():
-        template_name = "news-feed.html"
+        template_name = "news_feed.html"
         context = {
             'user': request.user,
+            'teachers': Teacher.objects.all(),
         }
     else:
         template_name = "home.html"

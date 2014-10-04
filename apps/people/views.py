@@ -1,18 +1,22 @@
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+
+from braces.views import LoginRequiredMixin
 
 from .models import Teacher
-
 from django.core import serializers
 
 
-def teacher_list(request):
-    template_name = "teacher-list.html"
+class TeacherListView(LoginRequiredMixin, ListView):
 
-    teachers = Teacher.objects.all()
+    model = Teacher
+    queryset = Teacher.objects.all()
 
-    return render(request, template_name, {'teachers': teachers})
+
+class TeacherDetailView(LoginRequiredMixin, DetailView):
+
+    model = Teacher
 
 
 def get_json(request):

@@ -3,6 +3,6 @@ from django.contrib import admin
 
 urlpatterns = patterns('',
 
-    url(r'^/signout$', 'apps.auth.views.signout', name='signout'),
+    url(r'^/signout/$', 'apps.auth.views.signout', name='signout'),
 )
 

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block extrastyles %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}"/>
+{% endblock extrastyles %}
+{% block content %}
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            {% include 'shared/_header.html' %}
+        </div>
+    </div>
+    <div class="container-fluid">
+        {% block body %}{% endblock body %}
+    </div>
+{% endblock content %}

@@ -13,10 +13,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Profe arbolito</td>
-                </tr>
+                {% for teacher in teachers %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td><a href="{{ teacher.get_absolute_url     }}">{{ teacher.name }}</a></td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>

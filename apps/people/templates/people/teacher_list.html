@@ -1,0 +1,16 @@
+{% extends 'dashboard2.html' %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-12">
+        <h1>teacher list</h1>
+        <ul>
+            {% for teacher in object_list %}
+                <li>
+                    <a href="{{teacher.get_absolute_url}}">{{ teacher.name }}</a>
+                 </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock body %}
