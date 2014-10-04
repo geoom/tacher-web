@@ -10,6 +10,7 @@ class Teacher(models.Model):
     
     name = models.CharField(_('name'), max_length=15)
     description = models.TextField(_('description'), blank=True)
+    avatar_url = models.URLField(_('avatar url'), max_length=200, null=True, blank=True)
     average_record = models.DecimalField(_('average record'), max_digits=5, decimal_places=3, default=0)
 
     class Meta:

@@ -4,7 +4,16 @@
 <div class="row">
     <div class="col-md-12">
         <a href="{% url 'people:teacher_list' %}">Back to teacher list</a>
-        <h1>{{ object.name }}</h1>
+        <br/>
+        <h1 class="page-header">{{ object.name }}</h1>
+        <div class="row">
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <img src="{{ object.avatar_url }}" class="img-responsive" alt=""/>
+            </div>
+            <div class="col-xs-6 col-sm-6">
+                <p>{{ object.description }}</p>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock body %}
