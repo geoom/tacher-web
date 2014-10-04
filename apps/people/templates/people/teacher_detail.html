@@ -1,5 +1,5 @@
 {% extends 'dashboard2.html' %}
-
+{% load staticfiles %}
 {% block body %}
 <div class="row">
     <div class="col-md-12">
@@ -8,7 +8,11 @@
         <h1 class="page-header">{{ object.name }}</h1>
         <div class="row">
             <div class="col-xs-6 col-sm-3 placeholder">
-                <img src="{{ object.avatar_url }}" class="img-responsive" alt=""/>
+                {% if object.avatar_url %}
+                    <img src="{{ object.avatar_url }}" class="img-responsive" alt=""/>
+                {% else %}
+                    <img src="{% static 'img/avatar/default-avatar.jpg' %}" class="img-responsive" alt=""/>
+                {% endif %}
             </div>
             <div class="col-xs-6 col-sm-6">
                 <p>{{ object.description }}</p>
