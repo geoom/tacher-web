@@ -9,7 +9,7 @@ router.register(r'teachers', views.TeacherViewSet)
 
 urlpatterns = patterns('',
     url(r'^', include(router.urls)),
-    
+
     url(r'^docs/', include('rest_framework_swagger.urls', namespace='swagger'))
 )
 
