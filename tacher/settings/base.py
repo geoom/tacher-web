@@ -10,8 +10,9 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__)).strip('tacher')
 
+BASE_DIR = os.path.dirname(os.path.dirname(__file__)).strip('tacher')
+SITE_NAME = 'tacher'
 
 # Added to help use env variables
 def env_var(key, default=None):
@@ -59,7 +60,7 @@ THIRD_APPS = (
 
 LOCAL_APPS = (
     'apps.people',
-    'apps.ranking',
+    'apps.rating',
     'apps.authen',
 )
 
@@ -102,12 +103,12 @@ WSGI_APPLICATION = 'tacher.wsgi.application'
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-pe'
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = False
-USE_L10N = False
+USE_I18N = True
+USE_L10N = True
 USE_TZ = True
 
 
@@ -116,6 +117,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'uploads'))
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),

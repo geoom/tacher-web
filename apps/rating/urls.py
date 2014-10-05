@@ -2,5 +2,5 @@ from django.conf.urls import patterns, include, url
 
 
 urlpatterns = patterns('',
-    url(r'ranking/$', 'apps.ranking.views.ranking', name='ranking'),
+    # url(r'rating/$', 'apps.rating.views.rating', name='rating'),
 )

@@ -3,8 +3,6 @@ from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 
-from apps.ranking.models import Record
-
 
 class Teacher(models.Model):
     
