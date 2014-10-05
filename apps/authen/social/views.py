@@ -21,10 +21,7 @@ def signin_by_access_token(request, backend):
             login(request, user)
             response.update({'status': True})
             response.update(dict(user={'id': user.id}))
-            print "ok"
-    except Exception as e:
-        print "error"
-        print e
-        # pass
+    except Exception:
+        pass
 
     return HttpResponse(json.dumps(response), content_type='application/json')
