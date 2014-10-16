@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*
 from django.contrib import admin
 
-from .models import RatingOption
+from .models import RatingOption, Rating
 
 
 class RatingOptionAdmin(admin.ModelAdmin):
@@ -12,3 +12,4 @@ class RatingOptionAdmin(admin.ModelAdmin):
     list_filter = ['kind']
 
 admin.site.register(RatingOption, RatingOptionAdmin)
+admin.site.register(Rating)
