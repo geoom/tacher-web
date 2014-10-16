@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__)).strip('tacher')
+
 SITE_NAME = 'tacher'
+SITE_URL = 'http://tacherdev.com:8000'
 
 # Added to help use env variables
 def env_var(key, default=None):
