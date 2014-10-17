@@ -42,7 +42,7 @@ class RatingOption(models.Model):
         return "%s: %s" % (self.get_kind_display().upper(), self.get_image_url())
 
     def get_image_url(self):
-        return "%s%s" % (settings.SITE_URL, self.image.url)
+        return self.image.url
 
     def get_kind_name(self):
         return self.get_kind_display()

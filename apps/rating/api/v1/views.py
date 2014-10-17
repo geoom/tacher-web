@@ -1,14 +1,8 @@
 # -*- coding: utf-8 -*
-from rest_framework import viewsets
 from rest_framework import generics
 
 from ...models import RatingOption
 from .resources import RatingOptionSerializer
-
-
-class RatingOptionViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = RatingOption.objects.all()
-    serializer_class = RatingOptionSerializer
 
 
 class RatingOptionList(generics.ListAPIView):
