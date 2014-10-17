@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*
 from django.contrib import admin
 
-from .models import RatingOption, Rating
+from .models import RatingOption, Rating, GlobalRating
 
 
 class RatingOptionAdmin(admin.ModelAdmin):
@@ -13,3 +13,4 @@ class RatingOptionAdmin(admin.ModelAdmin):
 
 admin.site.register(RatingOption, RatingOptionAdmin)
 admin.site.register(Rating)
+admin.site.register(GlobalRating)

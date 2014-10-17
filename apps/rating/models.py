@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*
 from django.db import models
+from django.core.validators import MinValueValidator
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
-
-from django.conf import settings
 
 from apps.people.models import Teacher
 
@@ -16,7 +15,6 @@ option_upload_dir = UploadTo('option')
 
 
 class RatingOption(models.Model):
-
     KIND_EVIL = 1
     KIND_EASIER = 2
     KIND_VAGUE = 3
@@ -49,9 +47,8 @@ class RatingOption(models.Model):
 
 
 class Rating(models.Model):
-
     teacher = models.ForeignKey(Teacher, related_name='ratings')
-    user = models.ForeignKey(User, related_name='ratings')
+    user = models.ForeignKey(User, related_name='ratings', null=True, blank=True)
 
     evil_value = models.SmallIntegerField(_('evil value'), validators=[validate_rating_value])
     easier_value = models.SmallIntegerField(_('easier value'), validators=[validate_rating_value])
@@ -60,15 +57,15 @@ class Rating(models.Model):
 
 
 class GlobalRating(models.Model):
-
     teacher = models.OneToOneField(Teacher, related_name='global_rating')
 
-    total_evil_value = models.IntegerField(_('total evil value'))
-    total_easier_value = models.IntegerField(_('total easier value'))
-    total_vague_value = models.IntegerField(_('total vague value'))
-    total_brainy_value = models.IntegerField(_('total brainy value'))
+    total_evil_value = models.IntegerField(_('total evil value'), default=0, validators=MinValueValidator(0))
+    total_easier_value = models.IntegerField(_('total easier value'), default=0, validators=MinValueValidator(0))
+    total_vague_value = models.IntegerField(_('total vague value'), default=0, validators=MinValueValidator(0))
+    total_brainy_value = models.IntegerField(_('total brainy value'), default=0, validators=MinValueValidator(0))
 
-    average_record = models.DecimalField(_('average record'), max_digits=5, decimal_places=3, default=0)
+    average_record = models.DecimalField(_('average record'), max_digits=5, decimal_places=3,
+                                         default=0, validators=MinValueValidator(0))
 
     def calculate_raking(self):
         """ Perform the teacher rate
@@ -77,4 +74,4 @@ class GlobalRating(models.Model):
             average_record (DecimalField): teacher average record
 
         """
-        self.average_record = self.total_evil_value*0.25 + self.total_easier_value*0.25 + self.total_vague_value*0.25 + self.total_brainy_value*0.25
+        self.average_record = self.total_evil_value * 0.25 + self.total_easier_value * 0.25 + self.total_vague_value * 0.25 + self.total_brainy_value * 0.25
